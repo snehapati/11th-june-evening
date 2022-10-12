@@ -26,11 +26,13 @@ public class LoginPage extends Util1 {
     
      public void EnterEmailID() throws IOException {
     	
-		 emailID.sendKeys(getConfigData("Email"));
+		 emailID.sendKeys(getConfigData("Email")); 
      }
 
      public void EnterPassword() throws IOException {
+    	 
     	 password.sendKeys(getConfigData("password"));
+    	 
      }
      
      public void Clickloginbtn() {
