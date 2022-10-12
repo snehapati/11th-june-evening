@@ -4,17 +4,15 @@
   <test thread-count="5" name="Test(failed)">
     <parameter name="Browser" value="chrome"/>
     <classes>
-      <class name="testclasses.VerifyUserCanAddAddress">
+      <class name="testclasses.VerifyUserCanLogin">
         <methods>
-          <include name="addAddresses" invocation-numbers="0 1"/>
-          <include name="afterClass"/>
-          <include name="afterMethod"/>
-          <include name="addAddress"/>
-          <include name="verifyUserCanSeeProfilePage"/>
-          <include name="beforeMethod"/>
           <include name="beforeClass"/>
+          <include name="beforeMethod"/>
+          <include name="afterClass"/>
+          <include name="VerifyUserCanLogIn"/>
+          <include name="afterMethod"/>
         </methods>
-      </class> <!-- testclasses.VerifyUserCanAddAddress -->
+      </class> <!-- testclasses.VerifyUserCanLogin -->
     </classes>
   </test> <!-- Test(failed) -->
 </suite> <!-- Failed suite [Suite] -->

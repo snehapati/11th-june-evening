@@ -32,7 +32,7 @@ public class Util1 {
 	
 	public static String getScreenshot(WebDriver driver, String methodName) throws IOException {
 		
-		String path = methodName + ".png" ;
+		String path =  methodName + ".jpg" ;
 		TakesScreenshot ts = (TakesScreenshot) driver;
 		File source = ts.getScreenshotAs(OutputType.FILE);
 		File dest = new File(path);

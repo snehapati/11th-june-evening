@@ -63,7 +63,7 @@ static WebDriver driver;
 		
 		String profileName = hp.getProfileName();
 		
-		Assert.assertEquals(profileName, "Sneha", "Profile Name is not matching");
+		Assert.assertNotEquals(profileName, "Sneha", "Profile Name is not matching");
 		
 	}
 	

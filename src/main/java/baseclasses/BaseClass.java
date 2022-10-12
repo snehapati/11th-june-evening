@@ -54,7 +54,7 @@ public class BaseClass {
    }
 	public static ExtentHtmlReporter getHtmlReporter() {
 		if(htmlReporter== null) {
-			htmlReporter = new ExtentHtmlReporter("ExtentReports\\reports.html");
+			htmlReporter = new ExtentHtmlReporter("reports.html");
 		}
 		return htmlReporter;
 	}

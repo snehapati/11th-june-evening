@@ -18,6 +18,7 @@ import org.testng.annotations.Test;
 
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
+import com.aventstack.extentreports.MediaEntityBuilder;
 import com.aventstack.extentreports.Status;
 import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
 
@@ -26,6 +27,7 @@ import listenersClasses.ListenerClass1;
 import pomclasses.HomePage;
 import pomclasses.LoginPage;
 import pomclasses.ProfilePage;
+import utilclasses.Util1;
 @Listeners(ListenerClass1.class)
 public class VerifyUserCanAddAddress {
 static WebDriver driver;
@@ -91,11 +93,14 @@ static WebDriver driver;
 		 AssertJUnit.assertFalse(isCountMatching);
 	}
 	@AfterMethod
-	public void afterMethod(ITestResult result) {
+	public void afterMethod(ITestResult result) throws IOException {
 		if(result.getStatus()==ITestResult.SUCCESS) {
 			extenttest.log(Status.PASS, "Test: " + result.getName());	
 		}else if(result.getStatus()==ITestResult.FAILURE) {
-			extenttest.log(Status.FAIL,"Test: " + result.getName());
+         
+			 String path = Util1.getScreenshot(driver, result.getName());
+			
+			extenttest.log(Status.FAIL,"Test: " + result.getName(), MediaEntityBuilder.createScreenCaptureFromPath(path).build());
 		}else if(result.getStatus()==ITestResult.SKIP) {
 			extenttest.log(Status.SKIP,"Test: " + result.getName());
 		}
