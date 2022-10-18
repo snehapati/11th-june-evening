@@ -104,5 +104,7 @@ static WebDriver driver;
 	public void afterClass() {
 		reports.flush();
 		BaseClass.unloadDriver();
+		
+		
 	}
 }
